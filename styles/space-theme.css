@@ -1,0 +1,106 @@
+/* COMET Scanner - Space Theme Styles */
+
+/* Space Background Base */
+.space-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f1419 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+/* Stars Layer */
+.stars-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(0, 212, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(0, 212, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(255, 255, 255, 0.6), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.8; }
+}
+
+/* Nebula Layer */
+.nebula-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(157, 78, 221, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 80%, rgba(106, 76, 147, 0.1) 0%, transparent 50%);
+  animation: nebulaDrift 20s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaDrift {
+  0% { 
+    transform: translateX(-10px) translateY(-5px) scale(1);
+    opacity: 0.6;
+  }
+  100% { 
+    transform: translateX(10px) translateY(5px) scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* Lightning Canvas */
+.lightning-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Enhanced Visual Effects */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.02) 50%, transparent 70%),
+    linear-gradient(-45deg, transparent 30%, rgba(157, 78, 221, 0.02) 50%, transparent 70%);
+  animation: cosmicShimmer 15s ease-in-out infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes cosmicShimmer {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .stars-layer,
+  .nebula-layer,
+  body::before {
+    animation: none;
+  }
+  
+  .lightning-canvas {
+    display: none;
+  }
+}
