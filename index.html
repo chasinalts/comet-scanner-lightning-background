@@ -3,77 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMET Scanner - Interactive Lightning Background Demo</title>
+    <title>COMET Scanner - Visual Trading Tool</title>
+    
+    <!-- Netlify Visual Editor Compatibility -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/image-resize.css">
     <link rel="stylesheet" href="styles/space-theme.css">
+    
+    <!-- Netlify Visual Editor Setup -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        // Stay on current page for visual editing
+                        window.location.reload();
+                    });
+                }
+            });
+        }
+    </script>
 </head>
 <body>
-    <!-- Main Header -->
-    <header class="main-header">
+    <!-- Netlify Visual Editor: Main Header -->
+    <header class="main-header" data-netlify-editor="header">
         <div class="container">
-            <h1>🚀 COMET Scanner</h1>
-            <p>Interactive Lightning Background Demo</p>
+            <h1 data-netlify-editor="title">🚀 COMET Scanner</h1>
+            <p data-netlify-editor="subtitle">Advanced Pine Script Generator for TradingView</p>
+            
+            <!-- Discord Auth Status -->
+            <div id="auth-status" class="auth-status" data-netlify-editor="auth-section">
+                <span class="auth-text" data-netlify-editor="auth-text">Use /cometscanner in Discord</span>
+                <button class="auth-button" data-netlify-editor="auth-button" onclick="window.open('https://discord.gg/your-server-invite', '_blank')">
+                    Join Discord Server
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
+    <!-- Netlify Visual Editor: Main Content -->
+    <main class="main-content" data-netlify-editor="main-content">
+        
         <!-- Hero Section -->
-        <section class="hero-section">
+        <section class="hero-section" data-netlify-editor="hero">
             <div class="container">
-                <div class="hero-content">
-                    <h2>Interactive Lightning Background</h2>
-                    <p>
-                        Move your cursor around to see the dynamic lightning effects!
-                        Energy particles will spawn and follow your movement with beautiful space-themed colors.
+                <div class="hero-content" data-netlify-editor="hero-content">
+                    <h2 data-netlify-editor="hero-title">Build Visual COMET Scanners</h2>
+                    <p data-netlify-editor="hero-description">
+                        Create COMET scanners that display data visually on charts instead of just numbers. 
+                        Join our Discord server and use /cometscanner to start building your custom visual scanner.
                     </p>
-                    <div class="hero-actions">
-                        <button class="btn-primary" onclick="toggleStats()">📊 Show Performance Stats</button>
-                        <button class="btn-secondary" onclick="toggleEffects()">⚡ Toggle Effects</button>
+                    <div class="hero-actions" data-netlify-editor="hero-actions">
+                        <button class="btn-primary" data-netlify-editor="discord-button" onclick="window.open('https://discord.gg/your-server-invite', '_blank')">
+                            🚀 Join Discord & Start Building
+                        </button>
+                        <button class="btn-secondary" data-netlify-editor="demo-button">📊 View Visual Examples</button>
+                    </div>
+                </div>
+                
+                <!-- Hero Banner Image -->
+                <div class="hero-banner" data-netlify-editor="hero-banner">
+                    <img src="https://via.placeholder.com/600x300/007bff/ffffff?text=COMET+Scanner+Demo" 
+                         alt="COMET Scanner Demo" 
+                         data-netlify-editor="hero-image"
+                         data-resizable="true"
+                         data-category="banners"
+                         data-image-id="hero_banner">
+                </div>
+            </div>
+        </section>
+
+        <!-- COMET Scanner Variations Gallery -->
+        <section class="variations-section" data-netlify-editor="variations-section">
+            <div class="container">
+                <div class="gallery-header" data-netlify-editor="gallery-header">
+                    <h3 data-netlify-editor="gallery-title">📊 COMET Scanner Visual Variations</h3>
+                    <p data-netlify-editor="gallery-description">
+                        Visual chart representations showing how COMET scanners display data graphically instead of just numerical values. Get inspired by different ways to visualize your scanner data on charts.
+                    </p>
+                </div>
+                
+                <div class="comet-variations-gallery" data-netlify-editor="variations-gallery">
+                    <!-- Gallery images will be loaded from Discord and made editable -->
+                    <img src="https://via.placeholder.com/300x200/007bff/ffffff?text=Line+Plot+Style" 
+                         alt="COMET Scanner with Line Plot Visualization" 
+                         data-netlify-editor="variation-1"
+                         data-resizable="true" 
+                         data-gallery-image="true"
+                         data-category="comet-variations"
+                         data-image-id="variation_1">
+                    
+                    <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Histogram+Style" 
+                         alt="COMET Scanner with Histogram Visualization" 
+                         data-netlify-editor="variation-2"
+                         data-resizable="true" 
+                         data-gallery-image="true"
+                         data-category="comet-variations"
+                         data-image-id="variation_2">
+                    
+                    <img src="https://via.placeholder.com/300x200/dc3545/ffffff?text=Heatmap+Style" 
+                         alt="COMET Scanner with Heatmap Visualization" 
+                         data-netlify-editor="variation-3"
+                         data-resizable="true" 
+                         data-gallery-image="true"
+                         data-category="comet-variations"
+                         data-image-id="variation_3">
+                    
+                    <img src="https://via.placeholder.com/300x200/ffc107/000000?text=Bubble+Chart+Style" 
+                         alt="COMET Scanner with Bubble Chart Visualization" 
+                         data-netlify-editor="variation-4"
+                         data-resizable="true" 
+                         data-gallery-image="true"
+                         data-category="comet-variations"
+                         data-image-id="variation_4">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" data-netlify-editor="features-section">
+            <div class="container">
+                <h3 data-netlify-editor="features-title">✨ Key Features</h3>
+                
+                <div class="features-grid" data-netlify-editor="features-grid">
+                    <div class="feature-card" data-netlify-editor="feature-1">
+                        <div class="feature-image" data-netlify-editor="feature-1-image">
+                            <img src="https://via.placeholder.com/200x150/6c757d/ffffff?text=Visual+Wizard" 
+                                 alt="Visual Wizard Interface" 
+                                 data-netlify-editor="wizard-image"
+                                 data-resizable="true"
+                                 data-category="ui-screenshots"
+                                 data-image-id="wizard_ui">
+                        </div>
+                        <h4 data-netlify-editor="feature-1-title">🧙‍♂️ Visual Wizard</h4>
+                        <p data-netlify-editor="feature-1-description">
+                            Step-by-step wizard guides you through scanner creation with visual examples and explanations.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card" data-netlify-editor="feature-2">
+                        <div class="feature-image" data-netlify-editor="feature-2-image">
+                            <img src="https://via.placeholder.com/200x150/495057/ffffff?text=AI+Assistant" 
+                                 alt="AI Assistant" 
+                                 data-netlify-editor="ai-image"
+                                 data-resizable="true"
+                                 data-category="ui-screenshots"
+                                 data-image-id="ai_assistant">
+                        </div>
+                        <h4 data-netlify-editor="feature-2-title">🤖 AI Assistant</h4>
+                        <p data-netlify-editor="feature-2-description">
+                            AI generates optimized asset lists and custom functions based on your requirements.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card" data-netlify-editor="feature-3">
+                        <div class="feature-image" data-netlify-editor="feature-3-image">
+                            <img src="https://via.placeholder.com/200x150/343a40/ffffff?text=Live+Preview" 
+                                 alt="Live Template Preview" 
+                                 data-netlify-editor="template-image"
+                                 data-resizable="true"
+                                 data-category="ui-screenshots"
+                                 data-image-id="live_preview">
+                        </div>
+                        <h4 data-netlify-editor="feature-3-title">👁️ Live Preview</h4>
+                        <p data-netlify-editor="feature-3-description">
+                            See your Pine Script code update in real-time as you make changes in the wizard.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Stats Display -->
-        <section class="stats-section" id="stats-section" style="display: none;">
+        <!-- Tutorial Section -->
+        <section class="tutorial-section" data-netlify-editor="tutorial-section">
             <div class="container">
-                <h3>Performance Statistics</h3>
-                <div id="performance-stats" class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-label">FPS:</span>
-                        <span class="stat-value" id="fps-value">--</span>
+                <h3 data-netlify-editor="tutorial-title">📚 How It Works</h3>
+                
+                <div class="tutorial-steps" data-netlify-editor="tutorial-steps">
+                    <div class="tutorial-step" data-netlify-editor="step-1">
+                        <div class="step-number" data-netlify-editor="step-1-number">1</div>
+                        <div class="step-content" data-netlify-editor="step-1-content">
+                            <h4 data-netlify-editor="step-1-title">Connect Discord</h4>
+                            <p data-netlify-editor="step-1-description">
+                                Connect your Discord account to access templates and save your progress.
+                            </p>
+                            <img src="https://via.placeholder.com/300x200/17a2b8/ffffff?text=Discord+Connect" 
+                                 alt="Discord Connection Tutorial" 
+                                 data-netlify-editor="step-1-image"
+                                 data-resizable="true"
+                                 data-category="tutorials"
+                                 data-image-id="tutorial_1">
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Particles:</span>
-                        <span class="stat-value" id="particle-count">--</span>
+                    
+                    <div class="tutorial-step" data-netlify-editor="step-2">
+                        <div class="step-number" data-netlify-editor="step-2-number">2</div>
+                        <div class="step-content" data-netlify-editor="step-2-content">
+                            <h4 data-netlify-editor="step-2-title">Answer Questions</h4>
+                            <p data-netlify-editor="step-2-description">
+                                Complete the visual wizard by answering questions about your trading strategy.
+                            </p>
+                            <img src="https://via.placeholder.com/300x200/6f42c1/ffffff?text=Wizard+Questions" 
+                                 alt="Wizard Questions Tutorial" 
+                                 data-netlify-editor="step-2-image"
+                                 data-resizable="true"
+                                 data-category="tutorials"
+                                 data-image-id="tutorial_2">
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Quality:</span>
-                        <span class="stat-value" id="quality-level">--</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Cursor Speed:</span>
-                        <span class="stat-value" id="cursor-speed">--</span>
+                    
+                    <div class="tutorial-step" data-netlify-editor="step-3">
+                        <div class="step-number" data-netlify-editor="step-3-number">3</div>
+                        <div class="step-content" data-netlify-editor="step-3-content">
+                            <h4 data-netlify-editor="step-3-title">Get Your Code</h4>
+                            <p data-netlify-editor="step-3-description">
+                                Copy the generated Pine Script code and paste it into TradingView.
+                            </p>
+                            <img src="https://via.placeholder.com/300x200/fd7e14/ffffff?text=Pine+Script+Code" 
+                                 alt="Pine Script Code Tutorial" 
+                                 data-netlify-editor="step-3-image"
+                                 data-resizable="true"
+                                 data-category="tutorials"
+                                 data-image-id="tutorial_3">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="main-footer">
+    <!-- Netlify Visual Editor: Footer -->
+    <footer class="main-footer" data-netlify-editor="footer">
         <div class="container">
-            <p>© 2024 COMET Scanner Lightning Background Demo</p>
+            <p data-netlify-editor="footer-text">
+                © 2024 COMET Scanner. Built with ❤️ for traders.
+            </p>
+            <div class="footer-links" data-netlify-editor="footer-links">
+                <a href="#" data-netlify-editor="support-link">Support</a>
+                <a href="#" data-netlify-editor="docs-link">Documentation</a>
+                <a href="#" data-netlify-editor="github-link">GitHub</a>
+            </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Live Template Window (Hidden by default) -->
+    <div id="live-template-window" class="live-template-window hidden" data-netlify-editor="template-window">
+        <div class="window-header" data-netlify-editor="template-header">
+            <h4 data-netlify-editor="template-title">📝 Live Pine Script Template</h4>
+            <div class="window-controls" data-netlify-editor="template-controls">
+                <button class="font-size-control" data-size="small">A</button>
+                <button class="font-size-control active" data-size="medium">A</button>
+                <button class="font-size-control" data-size="large">A</button>
+                <button class="close-window">×</button>
+            </div>
+        </div>
+        <div class="window-content" data-netlify-editor="template-content">
+            <pre id="template-code" class="template-code" data-netlify-editor="template-code">
+// COMET Scanner Template will appear here
+// Complete the wizard to see your custom Pine Script
+            </pre>
+        </div>
+    </div>
+
+    <!-- Live Template Tab -->
+    <div id="live-template-tab" class="live-template-tab" data-netlify-editor="template-tab">
+        📝 Live Template
+    </div>
+
+    <!-- Lightning Background Scripts -->
     <script src="js/cursor-tracker.js"></script>
+    <script src="js/color-manager.js"></script>
+    <script src="js/cloud-background.js"></script>
+    <script src="js/lightning-bolt.js"></script>
+    <script src="js/energy-cloud.js"></script>
+    <script src="js/performance-monitor.js"></script>
+    <script src="js/accessibility-manager.js"></script>
+    <script src="js/static-background.js"></script>
+    <script src="js/advanced-effects.js"></script>
+    <script src="js/lightning-config.js"></script>
+    <script src="js/lightning-tests.js"></script>
+    <script src="js/performance-benchmark.js"></script>
+    <script src="js/lightning-documentation.js"></script>
+    <script src="js/lightning-integration.js"></script>
     <script src="js/background-effects.js"></script>
     <script src="js/lightning-engine.js"></script>
     <script src="js/demo-controls.js"></script>
+    
+    <!-- Application Scripts -->
+    <script src="js/discord-integration.js"></script>
+    <script src="js/template-manager.js"></script>
+    
+    <!-- Initialize Lightning Background -->
+    <script>
+        // Initialize lightning background when page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Initialize lightning system with enhanced integration
+            if (typeof initializeLightningWithIntegration !== 'undefined') {
+                try {
+                    const result = await initializeLightningWithIntegration({
+                        // Custom configuration for COMET Scanner
+                        performance: {
+                            maxParticles: 40,
+                            maxLightningBolts: 6,
+                            maxEnergyClouds: 4
+                        },
+                        visual: {
+                            colorPalette: 'space-theme',
+                            intensityMultiplier: 1.2,
+                            enableBloom: true
+                        },
+                        interaction: {
+                            cursorSensitivity: 1.1,
+                            touchSupport: true
+                        },
+                        accessibility: {
+                            respectReducedMotion: true,
+                            enableManualToggle: true
+                        },
+                        debug: {
+                            enableLogging: true,
+                            showPerformanceStats: false
+                        }
+                    });
+                    
+                    if (result.success) {
+                        window.lightningEngine = result.engine;
+                        console.log('⚡ Lightning background initialized successfully');
+                        console.log('📊 Device performance score:', result.capabilities?.performanceScore);
+                    } else {
+                        console.warn('⚠️ Lightning initialization failed, using fallback:', result.error);
+                    }
+                } catch (error) {
+                    console.error('❌ Lightning initialization error:', error);
+                }
+            } else {
+                console.warn('⚡ Enhanced lightning system not found - trying basic initialization');
+                
+                // Fallback to basic initialization
+                if (typeof initializeLightning !== 'undefined') {
+                    try {
+                        const result = await initializeLightning();
+                        if (result.success) {
+                            window.lightningEngine = result.engine;
+                            console.log('⚡ Basic lightning system initialized');
+                        }
+                    } catch (error) {
+                        console.error('❌ Basic initialization also failed:', error);
+                    }
+                } else {
+                    console.warn('⚡ No lightning system available - effects disabled');
+                }
+            }
+        });
+    </script>
+    
+    <!-- Initialize Netlify Identity for Visual Editor -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.init();
+        }
+    </script>
 </body>
 </html>
