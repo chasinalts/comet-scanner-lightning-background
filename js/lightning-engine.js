@@ -583,3 +583,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // Export for testing and external access
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = LightningEngine;
+}
