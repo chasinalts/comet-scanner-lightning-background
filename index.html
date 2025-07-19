@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMET Scanner - Interactive Lightning Background Demo</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/space-theme.css">
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <h1>🚀 COMET Scanner</h1>
+            <p>Interactive Lightning Background Demo</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Interactive Lightning Background</h2>
+                    <p>
+                        Move your cursor around to see the dynamic lightning effects!
+                        Energy particles will spawn and follow your movement with beautiful space-themed colors.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn-primary" onclick="toggleStats()">📊 Show Performance Stats</button>
+                        <button class="btn-secondary" onclick="toggleEffects()">⚡ Toggle Effects</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Display -->
+        <section class="stats-section" id="stats-section" style="display: none;">
+            <div class="container">
+                <h3>Performance Statistics</h3>
+                <div id="performance-stats" class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">FPS:</span>
+                        <span class="stat-value" id="fps-value">--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Particles:</span>
+                        <span class="stat-value" id="particle-count">--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Quality:</span>
+                        <span class="stat-value" id="quality-level">--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Cursor Speed:</span>
+                        <span class="stat-value" id="cursor-speed">--</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2024 COMET Scanner Lightning Background Demo</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/cursor-tracker.js"></script>
+    <script src="js/background-effects.js"></script>
+    <script src="js/lightning-engine.js"></script>
+    <script src="js/demo-controls.js"></script>
+</body>
+</html>
